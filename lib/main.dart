@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,34 +11,35 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 15),
+                  child: Icon(
+                    Icons.menu,
+                    size: 45,
+                    color: Colors.black,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, right: 15),
+                  child: Icon(
+                    Icons.search,
+                    size: 45,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+        ),
         backgroundColor: Colors.white,
         body: ListView(
           children: <Widget>[
-            AppBar(
-              backgroundColor: Colors.white,
-              elevation: 0,
-              title: Padding(
-                padding: EdgeInsets.fromLTRB(10, 30, 10, 10),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    IconButton(
-                      iconSize: 45.0,
-                      color: Colors.black,
-                      icon: Icon(Icons.menu),
-                      onPressed: () {},
-                    ),
-                    IconButton(
-                      iconSize: 45.0,
-                      color: Colors.black,
-                      icon: Icon(Icons.search),
-                      onPressed: () {},
-                    )
-                  ],
-                ),
-              ),
-            ),
+            
             Stack(
               children: <Widget>[
                 Padding(
@@ -51,7 +53,7 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 130, left: 30, bottom: 40),
+                  padding: EdgeInsets.only(top: 130, left: 30, bottom: 30, right: 30),
                   child: Container(
                     width: 370.0,
                     height: 210.0,
@@ -109,8 +111,8 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  left: 180,
-                  bottom: 30,
+                  left: 160,
+                  bottom: 20,
                   child: Container(
                     height: 310,
                     child: Image.asset(
@@ -196,11 +198,19 @@ class MyApp extends StatelessWidget {
                               fontSize: 15.0,
                               fontWeight: FontWeight.normal,
                             )),
-                      )
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 220, left: 100),
+                        child: FloatingActionButton(
+                            onPressed: () {},
+                            elevation: 0,
+                            backgroundColor: Colors.black,
+                            child: Center(child: Icon(Icons.add))),
+                      ),
                     ],
                   ),
                   SizedBox(
-                    width: 30,
+                    width: 15,
                   ),
                   Stack(
                     children: <Widget>[
@@ -241,11 +251,19 @@ class MyApp extends StatelessWidget {
                               fontSize: 15.0,
                               fontWeight: FontWeight.normal,
                             )),
-                      )
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 220, left: 100),
+                        child: FloatingActionButton(
+                            onPressed: () {},
+                            elevation: 0,
+                            backgroundColor: Colors.black,
+                            child: Center(child: Icon(Icons.add))),
+                      ),
                     ],
                   ),
                   SizedBox(
-                    width: 30,
+                    width: 15,
                   ),
                   Stack(
                     children: <Widget>[
@@ -286,7 +304,15 @@ class MyApp extends StatelessWidget {
                               fontSize: 15.0,
                               fontWeight: FontWeight.normal,
                             )),
-                      )
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 220, left: 100),
+                        child: FloatingActionButton(
+                            onPressed: () {},
+                            elevation: 0,
+                            backgroundColor: Colors.black,
+                            child: Center(child: Icon(Icons.add))),
+                      ),
                     ],
                   ),
                 ],
@@ -295,27 +321,26 @@ class MyApp extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
-              elevation: 0,
-              backgroundColor: Colors.white,
-              currentIndex: 0,
-              items: [
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.home, color: Colors.black),
-                    title: Text('')),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart, color: Colors.black),
-                  title: Text(''),
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home, color: Colors.black),
-                  title: Text(''),
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.person, color: Colors.black),
-                  title: Text(''),
-                ),
-              ],
+          elevation: 0,
+          backgroundColor: Colors.white,
+          currentIndex: 0,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home, color: Colors.black), title: Text('')),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart, color: Colors.black),
+              title: Text(''),
             ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home, color: Colors.black),
+              title: Text(''),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person, color: Colors.black),
+              title: Text(''),
+            ),
+          ],
+        ),
       ),
     );
     /**
