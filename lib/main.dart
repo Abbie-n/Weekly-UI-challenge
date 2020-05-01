@@ -15,31 +15,30 @@ class MyApp extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.white,
           title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 15),
-                  child: Icon(
-                    Icons.menu,
-                    size: 45,
-                    color: Colors.black,
-                  ),
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 20, left: 15),
+                child: Icon(
+                  Icons.menu,
+                  size: 45,
+                  color: Colors.black,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, right: 15),
-                  child: Icon(
-                    Icons.search,
-                    size: 45,
-                    color: Colors.black,
-                  ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20, right: 15),
+                child: Icon(
+                  Icons.search,
+                  size: 45,
+                  color: Colors.black,
                 ),
-              ],
-            ),
+              ),
+            ],
+          ),
         ),
         backgroundColor: Colors.white,
         body: ListView(
           children: <Widget>[
-            
             Stack(
               children: <Widget>[
                 Padding(
@@ -53,7 +52,8 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 130, left: 30, bottom: 30, right: 30),
+                  padding: EdgeInsets.only(
+                      top: 130, left: 30, bottom: 30, right: 30),
                   child: Container(
                     width: 370.0,
                     height: 210.0,
@@ -321,23 +321,26 @@ class MyApp extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
           elevation: 0,
-          backgroundColor: Colors.white,
           currentIndex: 0,
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home, color: Colors.black), title: Text('')),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart, color: Colors.black),
-              title: Text(''),
+              icon: Icon(Icons.home, size: 33, color: Colors.black),
+              title: Padding(padding: EdgeInsets.all(0)),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.black),
-              title: Text(''),
+              icon: Icon(FontAwesomeIcons.shoppingBag, color: Colors.black),
+              title: Padding(padding: EdgeInsets.all(0)),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: Colors.black),
-              title: Text(''),
+              icon: Icon(FontAwesomeIcons.heart, color: Colors.black),
+              title: Padding(padding: EdgeInsets.all(0)),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(FontAwesomeIcons.user, color: Colors.black),
+              title: Padding(padding: EdgeInsets.all(0)),
             ),
           ],
         ),
